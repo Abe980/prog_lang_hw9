@@ -68,16 +68,16 @@ Console.WriteLine(FuncAkkerman(3, 2));
 /// <summary>
 /// Считается функция Аккермана для n и m
 /// </summary>
-/// <param name="n"></param>
 /// <param name="m"></param>
+/// <param name="n"></param>
 /// <returns>Значение функции</returns>
-int FuncAkkerman(int n, int m)
+int FuncAkkerman(int m, int n)
 {
-  if (n == 0)
-    return m + 1;
+  if (m == 0)
+    return n + 1;
   else
-    if ((n != 0) && (m == 0))
-      return FuncAkkerman(n - 1, 1);
+    if ((m != 0) && (n == 0))
+      return FuncAkkerman(m - 1, 1);
     else
-      return FuncAkkerman(n - 1, FuncAkkerman(n, m - 1));
+      return FuncAkkerman(m - 1, FuncAkkerman(m, n - 1));
 }
